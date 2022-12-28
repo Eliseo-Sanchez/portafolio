@@ -1,0 +1,158 @@
+header {
+    background-color: #CCCCCC;
+    padding: 40px 0;
+}
+
+nav {
+	position: absolute;
+	top: 90px;
+	right: 5%;
+}
+
+.encabezado {
+	width: 940px;
+	position: relative;
+	margin: 0px auto;
+    padding: 20px;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 0;
+}
+
+.encabezado h1 {
+	color: #2F4F4F;
+	font-weight: bold;
+	font-size: 60px;
+}
+
+
+
+/* ----------  MAIN ---------------*/
+
+main {
+    padding: 40px;
+    background-color: #E6E6FA;
+}
+
+.textos input {
+    font-size: 20px;
+    
+    padding: 30px 0 25px 20px;
+    border-color: #8e2de2;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 20px;
+}
+
+#entrada {
+    margin: 0 40px 40px 0;
+    width: 44%;
+}
+
+#salida {
+    margin: 0 0 10px 40px;
+    width: 44%;
+}
+
+.botones input {
+    width: 200px;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 0.8em;
+    border: none;
+    background: linear-gradient(to right,  #4a00e0, #8e2de2);
+    color: ghostwhite;
+    padding: 10px 30px;
+    margin: 0 50px;
+}
+
+.btnencriptar:hover, .btndesencriptar:hover, .btncopiar:hover {
+    background: linear-gradient(to right,  #8B008B, #FF1493);
+    font-size: 18px;
+	font-weight: bold;
+	border: none;
+	transition: 1s all;
+}
+
+.imgnoEncontrado {
+    position: absolute;
+    top: 55%;
+	left: 63%;
+}
+
+/* ---------- PIE PAGINA ------------*/
+
+footer {
+    background: darkgray;
+}
+
+.piePagina {
+    text-align: center;
+    padding: 30px;
+}
+
+.piePagina h2 {
+    margin: 20px 0 0 0;
+    font-weight: bold;
+}
+
+/* ---------------- PARA CELULAR -------------------- */
+
+@media screen and (max-width:480px) {
+
+    .encabezado, .piePagina {
+        width: auto;
+    }
+
+    .encabezado {
+        text-align: center;
+    }
+
+    .encabezado h1{
+        font-size: 40px;
+        text-align: center;
+        margin: 30px 0 0 0;
+    }
+
+    nav {
+        position: static;  
+    }
+
+    .piePagina img {
+        width: 100%;
+    }
+
+    .piePagina h2 {
+        font-size: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .textos input{
+        font-size: 15px;
+    }
+
+    #entrada {
+        margin: 0 10px 20px 0;
+        width: 40%;
+    }
+    
+    #salida {
+        margin: 0 0 20px 10px;
+        width: 40%;
+    }
+
+    .botones {
+        text-align: center;
+    }
+
+    .botones input {
+        text-align: center;
+        margin: 5px;
+    }
+
+}
