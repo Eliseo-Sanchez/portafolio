@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="reset.css">
+        <meta name="viewport" content="width=device-width">
+
+    </head>
+    <body>
+        <header>
+            <div class="encabezado">
+                <img src="imagenes/logo.png">
+                <nav>
+                    <ul>
+                        <li><h1>ENCRIPTADOR</h1></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+         
+        <main>
+
+            <div class="textos">
+                <input id="entrada" type="text" placeholder="Ingrese el texto aquí">
+                <input id="salida" type="text" placeholder="Texto final">
+            </div>
+
+            <div class="botones">
+                <form>
+                    <input type="button" onclick="encriptar()" class="btnencriptar" value="Encriptar">
+                    <input type="button" onclick="desencriptar()" class="btndesencriptar" value="Desencriptar">
+                    <input type="button" onclick="copiar()" class="btncopiar" value="Copiar">
+                </form>
+            </div>
+
+        </main> 
+
+        <footer>
+            <div class="piePagina">
+                <img src="imagenes/piePagina.png">
+                <h2>&copy Derechos. SK Cristian Sanchez</h2>
+            </div>
+        </footer> 
+
+    </body>
+</html>
+
+<script>
+    var mensaje = [];
+    var frase = [];
+    var menEncriptado =[];
+    var menDesencriptado = [];
+   
+    function encriptar (){
+        mensaje = [];
+        menEncriptado = [];
+        var traer = document.getElementById("entrada").value;
+        mensaje = Array.from(traer);
+
+        for(var i=0; i<mensaje.length; i++){
+            if(mensaje[i] == 'a'){
+                menEncriptado += 'ai';
+            } else if(mensaje[i] == 'e'){
+                menEncriptado += 'enter';
+            } else if(mensaje[i] == 'i'){
+                menEncriptado += 'imes';
+            } else if(mensaje[i] == 'o'){
+                menEncriptado += 'ober';
+            } else if(mensaje[i] == 'u'){
+                menEncriptado += 'ufat';
+            } 
+            else {
+                menEncriptado += mensaje[i];
+            }
+        }
+    
+        salida.value = menEncriptado;
+    }
+
+    function desencriptar (){
+        mensaje = [];
+        frase = [];
+        menDesencriptado = [];
+        var traer = document.getElementById("entrada").value;
+        mensaje = traer.split(",")
+
+        for(var i=0; i<mensaje.length; i++){
+            frase += Array.from(mensaje[i]);
+        }
+
+        for(var i=0; i<frase.length; i++){
+            if(frase[i] == ' '){
+                menDesencriptado += ' ';
+            } else if(frase[i] == ','){
+                
+            } else if(frase[i] == 'a' && frase[i+2] == 'i'){
+                menDesencriptado += 'a';
+                i+=2;
+            } 
+            else if(frase[i] == 'e' && frase[i+2] == 'n' && frase[i+4] == 't' && frase[i+6] == 'e' && frase[i+8] == 'r'){
+                menDesencriptado += 'e';
+                i+=8
+            }
+            else if(frase[i] == 'i' && frase[i+2] == 'm' && frase[i+4] == 'e' && frase[i+6] == 's'){
+                menDesencriptado += 'i';
+                i+=6;
+            } 
+            else if(frase[i] == 'o' && frase[i+2] == 'b' && frase[i+4] == 'e' && frase[i+6] == 'r'){
+                menDesencriptado += 'o';
+                i+=6;
+            } 
+            else if(frase[i] == 'u' && frase[i+2] == 'f' && frase[i+4] == 'a' && frase[i+6] == 't'){
+                menDesencriptado += 'u';
+                i+=6;
+            } else {
+                menDesencriptado += frase[i];
+            }
+            
+        }
+
+        salida.value = menDesencriptado;
+    }
+
+    function copiar (){
+        var content = document.getElementById('salida');
+        content.select();
+        document.execCommand('copy');
+    }
+
+</script>
